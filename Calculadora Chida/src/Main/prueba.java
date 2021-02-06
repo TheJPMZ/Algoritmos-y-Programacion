@@ -1,6 +1,7 @@
 package Main;
 
 /*Aqui se realizan las pruebas unitarias
+ * ver main para lista completa
 */
 
 import static org.junit.Assert.*;
