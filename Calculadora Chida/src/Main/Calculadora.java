@@ -17,49 +17,49 @@ import java.util.Vector;
 
 public class Calculadora {
 
-	public String Calculo(String dataline) {
-		
-		Vector<String> v = new Vector<String>();
+	public String Calculo(String dataline) { //Le ingresa un string en formato postfix "3 3 +"
+		 
+		Vector<String> vector = new Vector<String>();
 		
 		for (String x: dataline.split(" "))
 
-			if (x.equals("+")){
-				int a = obtener(v);
-				int b = obtener(v);
+			if (x.equals("+")){ //Operacion si es suma
+				int a = obtener(vector); //Obtiene los ultimos dos numeros
+				int b = obtener(vector);
 				int operacion = b + a;
-				String s=String.valueOf(operacion);
-				v.add(s);
-			}else if (x.equals("-")){
-				int a = obtener(v);
-				int b = obtener(v);
+				String resultado=String.valueOf(operacion);
+				vector.add(resultado); //Regresa el resultado al vector
+			}else if (x.equals("-")){ //Operacion si es resta
+				int a = obtener(vector);
+				int b = obtener(vector);
 				int operacion = b - a;
-				String s=String.valueOf(operacion);
-				v.add(s);
-			}else if (x.equals("*")){
-				int a = obtener(v);
-				int b = obtener(v);
+				String resultado=String.valueOf(operacion);
+				vector.add(resultado);
+			}else if (x.equals("*")){ //Operacion si es multiplicacion
+				int a = obtener(vector);
+				int b = obtener(vector);
 				int operacion = b * a;
-				String s=String.valueOf(operacion);
-				v.add(s);
-			}else if (x.equals("/")){
-				int a = obtener(v);
-				int b = obtener(v);
+				String resultado=String.valueOf(operacion);
+				vector.add(resultado);
+			}else if (x.equals("/")){ //Operacion si es division
+				int a = obtener(vector);
+				int b = obtener(vector);
 				int operacion = b / a;
-				String s=String.valueOf(operacion);
-				v.add(s);
+				String resultado=String.valueOf(operacion);
+				vector.add(resultado);
 			}else {
-				v.add(x);
+				vector.add(x);
 			}
-		System.out.println("El resultado de '"+dataline+"' es "+ v.lastElement());
-		return v.lastElement();
+		System.out.println("El resultado de '"+dataline+"' es "+ vector.lastElement());
+		return vector.lastElement(); //El unico elmento del vector es la respuesta, lo regresa en string
 	}
 	
-	private int obtener(Vector<String> v) {
-		String operandoa = (String) v.lastElement();
-		int numa = v.lastIndexOf(operandoa);
-		v.remove(numa);
-		int a = Integer.parseInt(operandoa);
-		return a ;
+	private int obtener(Vector<String> vector) { //Obtiene un vector
+		String operandoa = (String) vector.lastElement();//Obtiene el ultimo elemento
+		int number = vector.lastIndexOf(operandoa); //Obtiene su posicion
+		vector.remove(number); //Lo elimina del vector
+		int a = Integer.parseInt(operandoa);//lo vuelve int
+		return a ;//Regresa un entero
 	}
 }
 
