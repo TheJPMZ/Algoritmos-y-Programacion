@@ -31,7 +31,7 @@ public class Main {
 		String dataline;
 		String res;
 		while ((dataline = br.readLine())!= null)
-			res = calculadora.calcular(dataline);
+			res = calculadora.Calculo(dataline);
 		
 	}
 }

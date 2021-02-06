@@ -17,7 +17,7 @@ import java.util.Vector;
 
 public class Calculadora {
 
-	public String calcular(String dataline) {
+	public String Calculo(String dataline) {
 		
 		Vector<String> v = new Vector<String>();
 		

@@ -15,6 +15,6 @@ como referencia para realizarlo
 
 public interface CalculadoraGeneral {
  
-	String Calcular(String dataline);
+	String Calculo(String dataline);
 
 }
